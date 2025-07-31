@@ -33,14 +33,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ${{vars.DOCKER_END_POINT}}/drawdb:latest
           push: true
-
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
+      
       - name: Hit Deployment URL
         run: curl -X GET "http://129.150.42.13:3000/api/deploy/aafc2fef20c837021c67c055a301840ad80fb5e17248e85b"
 
